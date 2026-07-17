@@ -1,0 +1,14 @@
+transformers
+torch
+datasets
+evaluate
+sentencepiece
+accelerate
+huggingface-hub
+scikit-learn
+pandas
+spacy
+nltk
+tqdm
+rouge-score
+streamlit
