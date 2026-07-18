@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# df_clean.csv is tracked via Git LFS (see .gitattributes)
+data/raw/

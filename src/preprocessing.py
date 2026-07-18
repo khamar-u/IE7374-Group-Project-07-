@@ -28,6 +28,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from sklearn.model_selection import train_test_split
+from tqdm import tqdm
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from utils.helpers import load_config, save_dataframe, print_section
@@ -161,7 +162,8 @@ def preprocess_dataframe(df):
     df = parse_dates(df)
 
     print("  Generating review_clean  (transformer input)...")
-    df["review_clean"] = df["review"].apply(make_review_clean)
+    tqdm.pandas(desc="  review_clean")
+    df["review_clean"] = df["review"].progress_apply(make_review_clean)
 
     # Drop reviews that are too short to carry meaningful signal
     config = load_config()
@@ -173,8 +175,9 @@ def preprocess_dataframe(df):
     if dropped > 0:
         print(f"  Dropped {dropped:,} reviews shorter than {min_len} words")
 
-    print("  Generating review_processed (classical NLP input)...")
-    df["review_processed"] = df["review"].apply(make_review_processed)
+    print("  Generating review_processed (classical NLP — this takes ~10 min)...")
+    tqdm.pandas(desc="  review_processed")
+    df["review_processed"] = df["review"].progress_apply(make_review_processed)
 
     print(f"  Done. Final shape: {df.shape}")
     return df
