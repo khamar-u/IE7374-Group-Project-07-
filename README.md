@@ -37,16 +37,18 @@ Frameworks: Python 3.10, HuggingFace Transformers, PyTorch, spaCy, NLTK, scikit-
 
 - Jin-woo Hong — Data Engineer: dataset sourcing, repo init, initial EDA. Deliverables: `drugsComTrain_raw.csv`, `drugsComTest_raw.csv`, `project_team_7.ipynb`.
 - Yosephine Tong — Data Analyst: cleaning, preprocessing, EDA, VADER scoring, topic modeling. Deliverables: `df_clean.csv`, `df_focused.csv`, EDA notebook.
-- Umang Khamar — NLP Engineer: DistilBERT fine-tuning, spaCy NER, symptom clustering, metrics (precision/recall/F1).
+- Umang Khamar — NLP Engineer: DistilBERT fine-tuning, spaCy NER, symptom clustering, metrics (precision/recall/F1). Deliverables: training notebooks, `src/model_runner.py` (pipeline skeleton), `experiments/distilbert_prelim.md`, saved DistilBERT checkpoint (optional, `models/distilbert_prelim/`), and scripts for computing precision/recall/F1.
 - Min Chang — AI Summarization Lead: BART pipeline, prompt design, ROUGE evaluation, Streamlit demo, report and slides.
 
-Note: `review_clean` (minimally cleaned natural text) will be used for transformer models; `review_processed` is for classical NLP.
-
+Note: 
+- `review_clean` (minimally cleaned natural text) is the canonical input for transformer models (DistilBERT, BART).  
+- `review_processed` is tokenized/normalized text intended for classical NLP baselines (e.g., TF–IDF + logistic regression, LDA).  
 ## Evaluation
 
-- Classification: precision, recall, F1 against labeled adverse-event flags.
-- Summaries: ROUGE scores and qualitative review; ensure conservative, source-grounded outputs.
-
+- **Classification:** precision, recall, and F1 (micro/macro/weighted) on stratified test splits, supported by confusion‑matrix error analysis.  
+- **Summarization:** ROUGE‑1/2/L and targeted qualitative checks for faithfulness, conservatism, and source grounding.  
+- **Sentiment alignment (RQ4):** track divergences between VADER scores and patient ratings to guide safer, more accurate summarizer prompt design.
+  
 ## References
 
 - Hutto, C. J., & Gilbert, E. (2014). VADER: A parsimonious rule-based model for sentiment analysis of social media text.
