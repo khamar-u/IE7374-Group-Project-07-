@@ -23,11 +23,11 @@ lda:
 models:
   distilbert:
     checkpoint: distilbert-base-uncased
-    learning_rate: 2.0e-5
-    batch_size: 16
-    epochs: 3
-    weight_decay: 0.01
-    max_length: 512
+    learning_rate: 5.0e-5        
+    batch_size: 16               
+    epochs: 1                    
+    weight_decay: 0.01           
+    max_length: 256              
   bart:
     checkpoint: facebook/bart-large-cnn
     max_input_length: 1024
