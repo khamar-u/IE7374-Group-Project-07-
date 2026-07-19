@@ -37,7 +37,7 @@ Frameworks: Python 3.10, HuggingFace Transformers, PyTorch, spaCy, NLTK, scikit-
 
 - Jin-woo Hong — Data Engineer: dataset sourcing, repo init, initial EDA. Deliverables: `drugsComTrain_raw.csv`, `drugsComTest_raw.csv`, `project_team_7.ipynb`.
 - Yosephine Tong — Data Analyst: cleaning, preprocessing, EDA, VADER scoring, topic modeling. Deliverables: `df_clean.csv`, `df_focused.csv`, EDA notebook.
-- Umang Khamar — NLP Engineer: DistilBERT fine-tuning, spaCy NER, symptom clustering, metrics (precision/recall/F1).
+- Umang Khamar — NLP Engineer: DistilBERT fine-tuning, spaCy NER, symptom clustering, metrics (precision/recall/F1). Deliverables: distilbert_prelim model artifacts, NER outputs, classification metrics.
 - Min Chang — AI Summarization Lead: BART pipeline, prompt design, ROUGE evaluation, Streamlit demo, report and slides.
 
 Note: `review_clean` (minimally cleaned natural text) will be used for transformer models; `review_processed` is for classical NLP.
