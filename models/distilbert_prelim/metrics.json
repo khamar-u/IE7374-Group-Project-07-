@@ -1,8 +1,8 @@
 {
-    "final_accuracy": 0.812,
-    "final_macro_f1": 0.5483662355343771,
+    "final_accuracy": 0.92,
+    "final_macro_f1": 0.6251622242188279,
     "epoch_losses": {
-        "epoch_1": 0.8638,
-        "epoch_2": 0.7283
+        "epoch_1": 0.7847,
+        "epoch_2": 0.5941
     }
 }

@@ -2,8 +2,8 @@
 # DistilBERT Preliminary Model — IE7374 Group 7
 
 ## Model Summary
-A fine‑tuned DistilBERT model trained on patient drug reviews to classify adverse‑event sentiment categories (`negative`, `neutral`, `positive`).  
-The model uses minimally cleaned natural text (`review_clean`) to preserve semantic richness.
+A fine‑tuned DistilBERT model trained on patient drug reviews to classify adverse‑event sentiment categories (negative, neutral, positive).  
+Uses minimally cleaned natural text (`review_clean`) to preserve semantic richness.
 
 ## Intended Use
 - Detect adverse events in patient reviews  
@@ -12,7 +12,7 @@ The model uses minimally cleaned natural text (`review_clean`) to preserve seman
 
 ## Dataset
 Source: Drugs.com patient reviews  
-Processed dataset: `df_focused.csv`  
+Processed dataset: df_focused.csv  
 Includes:
 - cleaned text  
 - processed text  
@@ -22,20 +22,16 @@ Includes:
 - metadata (drugName, condition, rating)
 
 ## Training
-- Base model: `distilbert-base-uncased`  
-- Epochs: 3  
-- Batch size: 8  
+- Base model: distilbert-base-uncased  
+- Epochs: 2  
+- Batch size: 16  
 - Learning rate: 5e‑5  
-- Train/test split: 80/20  
-- Loss: Cross‑entropy  
 - Optimizer: AdamW  
 
 ## Metrics
-Stored in `metrics.json`:
-- precision  
-- recall  
-- F1  
-- support  
+Final Accuracy: 0.8120  
+Final Macro F1: 0.5484  
+Epoch Losses: 0.8638 → 0.7283  
 
 ## Limitations
 - Preliminary model trained on 500‑sample subset  
